@@ -1,0 +1,31 @@
+.navigation_container {
+  padding: 20px 80px;
+  display: flex;
+  justify-content: space-between;
+  position: sticky;
+  top: 0;
+  left: 0;
+  background-color: rgba(212, 252, 176, 0.7);
+  //   border-bottom: 1px solid rgba($color: #000000, $alpha: 0.8);
+
+  .navigation_center-container {
+    width: 30%;
+    display: flex;
+    justify-content: space-between;
+    .nav_links {
+      
+      color: #054767;
+    }
+  }
+  .nav_links {
+    color: #f20428;
+    font-weight: bolder;
+  }
+}
+
+hr {
+  margin: 0px 80px;
+  height: 1px;
+  background-color: rgba($color: #000000, $alpha: 0.2);
+  border: none;
+}
