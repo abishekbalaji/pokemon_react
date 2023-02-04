@@ -5,15 +5,14 @@
   position: sticky;
   top: 0;
   left: 0;
-  background-color: rgba(212, 252, 176, 0.7);
-  //   border-bottom: 1px solid rgba($color: #000000, $alpha: 0.8);
+  //   background-color: rgba(212, 252, 176, 0.7);
+  background-color: rgba($color: #fff, $alpha: 0.7);
 
   .navigation_center-container {
     width: 30%;
     display: flex;
     justify-content: space-between;
     .nav_links {
-      
       color: #054767;
     }
   }
