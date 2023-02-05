@@ -1,0 +1,12 @@
+.sign-up_component {
+  display: flex;
+  flex-direction: column;
+  .sign-in-prompt-span {
+    text-align: center;
+
+    .sign-in-span {
+      font-weight: bold;
+      cursor: pointer;
+    }
+  }
+}

@@ -1,0 +1,18 @@
+.auth_section {
+  padding: 60px 80px;
+  display: flex;
+
+  .sign-in-up_container {
+    width: 40%;
+  }
+
+  .auth_image-container {
+    width: 60%;
+    height: 100vh;
+    background-image: url("../../assets/starters.jpg");
+    background-size: cover;
+    background-position: center;
+    // margin: 0 80px;
+    margin-left: 60px;
+  }
+}
