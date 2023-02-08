@@ -1,0 +1,23 @@
+.pokemons_page {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  column-gap: 30px;
+  row-gap: 20px;
+  padding: 60px 80px;
+
+  // justify-content: center;
+  .pokemons-page_pokemon-container {
+    display: flex;
+    flex-direction: column;
+    border: 1px solid black;
+    justify-content: center;
+    align-items: center;
+
+    .pokemons-page_pokemon-page {
+      font-weight: bold;
+    }
+    .pokemons_page_info-span {
+      cursor: pointer;
+    }
+  }
+}

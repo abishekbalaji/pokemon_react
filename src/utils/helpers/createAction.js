@@ -1,2 +1,2 @@
-const createAction = (type, payload) => ({ type, payload });
+const createAction = (type, payload = null) => ({ type, payload });
 export default createAction;
