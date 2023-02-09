@@ -1,0 +1,96 @@
+.pokemon-details_page {
+  padding: 60px 80px;
+  display: flex;
+  justify-content: center;
+  .pokemon_card {
+    border: 1px solid black;
+    width: 500px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    .pokemon-page_sprite {
+      height: 200px;
+      width: 200px;
+    }
+    .pokemon-page_name {
+      font-weight: bold;
+      margin-bottom: 30px;
+    }
+    .pokemon-page_types-container {
+      display: flex;
+      justify-content: space-between;
+      width: 40%;
+      .pokemon-page_type-container {
+        padding: 5px 10px;
+        border-radius: 5px;
+        display: flex;
+        align-items: center;
+        // justify-content: space-between;
+
+        .pokemon-page_type-name {
+          font-weight: bold;
+          margin-left: 5px;
+          color: white;
+        }
+        margin-bottom: 20px;
+      }
+
+      //   .pokemon-page_type-img {
+      //     background-color: red;
+      //     fill: green;
+      //   }
+    }
+    .pokemon-page_ability-container {
+      display: flex;
+      text-align: center;
+      justify-content: space-between;
+      width: 50%;
+      margin-bottom: 30px;
+
+      .pokemon-page_ability-name {
+        background-color: #b84655;
+        padding: 5px 10px;
+        border-radius: 5px;
+        color: white;
+        font-weight: bold;
+      }
+    }
+
+    .pokemon-page_trait-container {
+      width: 40%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      // justify-content: space-between;
+      margin-bottom: 30px;
+      font-weight: bold;
+
+      .pokemon-page_height {
+        margin-bottom: 15px;
+      }
+      .pokemon-page_height-value {
+        color: rgba($color: #000000, $alpha: 0.5);
+        margin-left: 20px;
+      }
+      .pokemon-page_weight-value {
+        color: rgba($color: #000000, $alpha: 0.5);
+        margin-left: 20px;
+      }
+    }
+
+    .pokemon-page_stats-container {
+      width: 50%;
+      margin-bottom: 30px;
+      .pokemon-page_stats-stat-container {
+        display: flex;
+        justify-content: space-between;
+        font-weight: bold;
+        .pokemon-page_stats-stat-name {
+        }
+        .pokemon-page_stats-stat-value {
+          color: rgba($color: #000000, $alpha: 0.5);
+        }
+      }
+    }
+  }
+}

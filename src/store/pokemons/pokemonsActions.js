@@ -44,3 +44,6 @@ export const fetchPokemonAsync = (url) => async (dispatch) => {
     dispatch(fetchPokemonFailed(error));
   }
 };
+
+export const setPage = (page) =>
+  createAction(POKEMONS_REDUCER_TYPES.SET_PAGE, page);

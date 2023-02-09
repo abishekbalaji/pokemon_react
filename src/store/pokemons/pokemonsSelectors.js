@@ -6,6 +6,11 @@ export const selectPokemons = createSelector(
   (pokemonsSlice) => pokemonsSlice.pokemons
 );
 
+export const selectPage = createSelector(
+  [pokemonsReducer],
+  (pokemonsSlice) => pokemonsSlice.page
+)
+
 export const selectPokemonUrl = createSelector(
   [selectPokemons, (state, name) => name],
   (pokemonsArray, name) => {
