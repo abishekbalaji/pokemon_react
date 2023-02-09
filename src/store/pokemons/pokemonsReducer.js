@@ -4,7 +4,7 @@ const INITIAL_POKEMONS_STATE = {
   pokemons: [],
   isLoading: false,
   error: null,
-  pokemon: {},
+  pokemon: null,
 };
 
 const pokemonsReducer = (state = INITIAL_POKEMONS_STATE, action) => {

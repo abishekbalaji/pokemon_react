@@ -6,6 +6,16 @@ export const selectPokemons = createSelector(
   (pokemonsSlice) => pokemonsSlice.pokemons
 );
 
+export const selectPokemonUrl = createSelector(
+  [selectPokemons, (state, name) => name],
+  (pokemonsArray, name) => {
+    if (pokemonsArray.length) {
+      const pokemon = pokemonsArray.find((pokemon) => pokemon.name === name);
+      return pokemon.url;
+    }
+  }
+);
+
 export const selectIsPokemonsLoading = createSelector(
   [pokemonsReducer],
   (pokemonsSlice) => pokemonsSlice.isLoading

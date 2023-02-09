@@ -1,43 +1,34 @@
 import { useEffect, useState } from "react";
-import Pokedex from "pokedex-promise-v2";
-import "./PokemonsPreview.scss";
-import {
-  fetchPokemonAsync,
-  fetchPokemonsAsync,
-} from "../../store/pokemons/pokemonsActions";
-import { useDispatch, useSelector } from "react-redux";
+import { useNavigate } from "react-router-dom";
+import { useSelector } from "react-redux";
 import {
   selectIsPokemonsLoading,
   selectPokemons,
 } from "../../store/pokemons/pokemonsSelectors";
 import Spinner from "../../components/Spinner/Spinner";
 
+import "./PokemonsPreview.scss";
+
 const Pokemons = () => {
-  const dispatch = useDispatch();
+  const navigate = useNavigate();
   const pokemonsArray = useSelector(selectPokemons);
   const isLoading = useSelector(selectIsPokemonsLoading);
-  const [pokemons, setPokemons] = useState([]);
+  const [pokemons, setPokemons] = useState(pokemonsArray);
 
   useEffect(() => {
     setPokemons(pokemonsArray);
   }, [pokemonsArray]);
 
-  useEffect(() => {
-    const interval = {
-      limit: 20,
-      offset: 0,
-    };
-    dispatch(fetchPokemonsAsync(interval));
-  }, [dispatch]);
-
-  // const handleInfoClick = (url) => {};
+  const handleInfoClick = (name) => {
+    navigate(`${name}`);
+  };
   return (
     <>
       {isLoading ? (
         <Spinner />
       ) : (
         <div className="pokemons_page">
-          {pokemons.length &&
+          {pokemons &&
             pokemons.map((pokemon) => (
               <div className="pokemons-page_pokemon-container">
                 <span className="pokemons-page_pokemon-page">
@@ -45,7 +36,7 @@ const Pokemons = () => {
                 </span>
                 <span
                   className="pokemons_page_info-span"
-                  onClick={() => dispatch(fetchPokemonAsync(pokemon.url))}
+                  onClick={() => handleInfoClick(pokemon.name)}
                 >
                   Info
                 </span>
