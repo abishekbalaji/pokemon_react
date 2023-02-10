@@ -1,30 +1,107 @@
 .navigation_container {
-  padding: 20px 80px;
+  padding: 10px 80px;
   display: flex;
   justify-content: space-between;
+  // align-items: center;
   position: sticky;
   top: 0;
   left: 0;
   //   background-color: rgba(212, 252, 176, 0.7);
   background-color: rgba($color: #fff, $alpha: 0.7);
 
-  .navigation_center-container {
-    width: 30%;
+  .navigation_nav-links-dropdown-open-btn {
+    background-color: white;
+    width: 20px;
+    height: fit-content;
+    line-height: 0;
+    font-size: 1rem;
+    position: absolute;
+    top: 15px;
+    right: 60px;
+    padding: 0;
+    border: none;
+    // transition: 0.5s;
+  }
+
+  .navigation_navlinks-container {
+    // visibility: hidden;
+    width: 250px;
     display: flex;
-    justify-content: space-between;
-    .nav_links {
-      color: #054767;
+    flex-direction: column;
+    position: absolute;
+    top: 0;
+    right: 0;
+    padding: 30px;
+    background-color: #054767;
+    // transition: 0.5s;
+
+    .navigation_center-container {
+      display: flex;
+      flex-direction: column;
     }
   }
+
+  // .navigation_center-container {
+  //   width: 30%;
+  //   display: flex;
+  //   justify-content: space-between;
+  //   .nav_links {
+  //     color: #054767;
+  //   }
+  // }
   .nav_links {
-    color: #f20428;
+    color: white;
     font-weight: bolder;
+    font-size: 1.2rem;
+    margin-bottom: 1rem;
+
+    &:hover {
+      color: yellow;
+    }
+  }
+  .navigation_nav-links-dropdown-close-btn {
+    width: 20px;
+    height: fit-content;
+    line-height: 0;
+    padding: 15px;
+    font-size: 1rem;
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    // transition: 0.5s;
   }
 }
 
-hr {
-  margin: 0px 80px;
-  height: 1px;
-  background-color: rgba($color: #000000, $alpha: 0.2);
-  border: none;
+.visibile {
+  visibility: visible;
+}
+
+.invisible {
+  visibility: hidden;
+}
+
+@media (min-width: 676px) {
+  .navigation_container {
+    padding: 0;
+    background-color: #054767;
+    .navigation_navlinks-container {
+      position: relative;
+      display: flex;
+      visibility: visible;
+      flex-direction: row;
+      justify-content: space-between;
+      padding: 0;
+      width: 100%;
+
+      .navigation_center-container {
+        width: 30%;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+      }
+    }
+    .navigation_nav-links-dropdown-close-btn {
+      visibility: hidden;
+    }
+  }
 }
