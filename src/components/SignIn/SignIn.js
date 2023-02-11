@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { useDispatch } from "react-redux";
 import setSignInOrUp from "../../store/signInOrUp/signInOrUpActions";
+import { signInAuthUserWithGoogleAsync } from "../../store/user/userActions";
 // import { selectSignInOrUp } from "../../store/signInOrUp/signInOrUpSelectors";
 import CustomButton from "../CustomButton/CustomButton";
 import FormInput from "../FormInput/FormInput";
@@ -28,6 +29,8 @@ const SignIn = () => {
     dispatch(setSignInOrUp(true));
   };
 
+  const handleGoogleSignIn = () => dispatch(signInAuthUserWithGoogleAsync());
+
   const handleFormSubmit = (e) => {
     e.preventDefault();
   };
@@ -52,7 +55,11 @@ const SignIn = () => {
           value={password}
         />
         <CustomButton type="submit">Sign In</CustomButton>
-        <CustomButton type="button" btnType="inverted">
+        <CustomButton
+          onClick={handleGoogleSignIn}
+          type="button"
+          btnType="inverted"
+        >
           Google Sign In
         </CustomButton>
       </form>

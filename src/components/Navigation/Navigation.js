@@ -1,7 +1,9 @@
 import { useState } from "react";
+import { useSelector } from "react-redux";
 import { Link, Outlet } from "react-router-dom";
 import pokeball from "../../assets/pokeball.png";
 import pokedex from "../../assets/pokedex.png";
+import { selectCurrentUser } from "../../store/user/userSelectors";
 
 import CustomButton from "../CustomButton/CustomButton";
 
@@ -9,6 +11,7 @@ import "./Navigation.scss";
 
 const Navigation = () => {
   const [dropdownVisible, setDropdownVisible] = useState(false);
+  const currentUser = useSelector(selectCurrentUser);
 
   const handleDropdownVisibleClick = () => {
     setDropdownVisible(true);
@@ -67,13 +70,17 @@ const Navigation = () => {
               Held Items
             </Link>
           </div>
-          <Link
-            onClick={() => setDropdownVisible(false)}
-            className="nav_links"
-            to="/auth"
-          >
-            Sign In
-          </Link>
+          {currentUser ? (
+            <span>Sign Out</span>
+          ) : (
+            <Link
+              onClick={() => setDropdownVisible(false)}
+              className="nav_links"
+              to="/auth"
+            >
+              Sign In
+            </Link>
+          )}
           <CustomButton
             onClick={handleDropdownInvisibleClick}
             classes={`navigation_nav-links-dropdown-close-btn ${

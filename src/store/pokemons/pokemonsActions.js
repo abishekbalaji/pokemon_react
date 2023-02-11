@@ -44,4 +44,3 @@ export const fetchPokemonAsync = (url) => async (dispatch) => {
     dispatch(fetchPokemonFailed(error));
   }
 };
-
