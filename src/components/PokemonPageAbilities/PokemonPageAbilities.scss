@@ -1,0 +1,30 @@
+.pokemon-page_abilities-container {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  column-gap: 10px;
+  row-gap: 10px;
+  text-align: center;
+
+  width: 90%;
+  margin-bottom: 30px;
+
+  .pokemon-page_ability-container {
+    background-color: #b84655;
+    padding: 5px;
+    border-radius: 5px;
+    // margin-left: 5px;
+    .pokemon-page_ability-name {
+      color: white;
+      font-weight: bold;
+
+      font-size: 0.8rem;
+    }
+  }
+}
+@media (min-width: 800px) {
+  .pokemon-page_abilities-container {
+    width: 60%;
+    column-gap: 30px;
+    row-gap: 20px;
+  }
+}

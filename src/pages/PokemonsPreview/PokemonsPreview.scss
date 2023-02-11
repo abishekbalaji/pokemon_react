@@ -1,43 +1,52 @@
-.pokemons_page {
+.pokemon-preview_page {
+  padding: 60px 80px;
+  .pokemon-preview-page_container {
+    margin-bottom: 60px;
+
+    .pokemon-preview_search {
+      width: 30%;
+      margin: auto;
+    }
+  }
+}
+
+.pagination_container {
   display: flex;
-  flex-direction: column;
-  // align-items: center;
-  .pokemons_page_container {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    column-gap: 30px;
-    row-gap: 20px;
-    padding: 60px 80px;
-
-    // justify-content: center;
-    .pokemons-page_pokemon-container {
-      display: flex;
-      flex-direction: column;
-      border: 1px solid black;
-      justify-content: center;
-      align-items: center;
-
-      .pokemons-page_pokemon-page {
-        font-weight: bold;
-      }
-      .pokemons_page_info-span {
-        cursor: pointer;
-      }
-    }
-  }
-
-  .next-prev_container {
+  justify-content: center;
+  .pokemon-preview_pagination {
     display: flex;
-    width: 20%;
-    justify-content: space-around;
-    margin: auto;
-    .prev-next-btn {
-      width: fit-content;
-      // height: 30px;
-      height: fit-content;
-      padding: 15px;
-      line-height: 0;
+    list-style: none;
+    margin-bottom: 60px;
+    align-items: center;
+    padding: 0;
+
+    li {
+      cursor: pointer;
       font-size: 0.8rem;
+      // background-color: #51bae8;
+      background-color: #054767;
+      padding: 10px 0;
     }
   }
+}
+
+.page-link {
+  color: white;
+  padding: 10px 20px;
+  font-weight: bold;
+}
+.page-num-pagination-active {
+  background-color: white;
+  // color: #51bae8;
+  color: #054767;
+}
+
+.prev-link,
+.next-link {
+  padding: 10px 20px;
+  color: white;
+}
+
+.break-link {
+  color: white;
 }

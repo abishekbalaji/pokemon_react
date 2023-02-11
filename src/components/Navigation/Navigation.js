@@ -21,7 +21,7 @@ const Navigation = () => {
   return (
     <>
       <div className="navigation_container">
-        <Link style={{ margin: 0 }} className="nav_links" to="/">
+        <Link id="brand-link" className="nav_links" to="/">
           <img height={30} width={30} src={pokedex} alt="logo" />
         </Link>
         <CustomButton

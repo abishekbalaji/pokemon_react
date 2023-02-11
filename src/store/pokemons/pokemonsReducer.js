@@ -5,7 +5,6 @@ const INITIAL_POKEMONS_STATE = {
   isLoading: false,
   error: null,
   pokemon: null,
-  page: 0,
 };
 
 const pokemonsReducer = (state = INITIAL_POKEMONS_STATE, action) => {
@@ -45,11 +44,6 @@ const pokemonsReducer = (state = INITIAL_POKEMONS_STATE, action) => {
         ...state,
         isLoading: false,
         pokemon: payload,
-      };
-    case POKEMONS_REDUCER_TYPES.SET_PAGE:
-      return {
-        ...state,
-        page: payload,
       };
     default:
       return state;

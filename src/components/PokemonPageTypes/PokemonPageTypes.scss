@@ -1,0 +1,25 @@
+.pokemon-page_types-container {
+  display: flex;
+  justify-content: center;
+  width: 50%;
+  .pokemon-page_type-container {
+    padding: 5px 10px;
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    margin-left: 10px;
+    // justify-content: space-between;
+
+    .pokemon-page_type-name {
+      font-weight: bold;
+      margin-left: 5px;
+      color: white;
+    }
+    margin-bottom: 20px;
+  }
+
+  //   .pokemon-page_type-img {
+  //     background-color: red;
+  //     fill: green;
+  //   }
+}
