@@ -46,6 +46,7 @@ const SignUp = () => {
       <span className="sign-up-section_subtitle">Sign Up</span>
       <form onSubmit={handleSubmit}>
         <FormInput
+          classes="form-input-custom"
           onChange={handleInputChange}
           name="name"
           type="text"
@@ -53,6 +54,7 @@ const SignUp = () => {
           label="Name"
         />
         <FormInput
+          classes="form-input-custom"
           onChange={handleInputChange}
           name="email"
           type="email"
@@ -60,6 +62,7 @@ const SignUp = () => {
           label="Email"
         />
         <FormInput
+          classes="form-input-custom"
           onChange={handleInputChange}
           name="password"
           type="password"
@@ -67,13 +70,16 @@ const SignUp = () => {
           label="Password"
         />
         <FormInput
+          classes="form-input-custom"
           onChange={handleInputChange}
           name="confirmPassword"
           type="password"
           value={confirmPassword}
           label="Confirm Password"
         />
-        <CustomButton type="submit">Sign Up</CustomButton>
+        <CustomButton classes="sign-up-btn" type="submit">
+          Sign Up
+        </CustomButton>
       </form>
       <span className="sign-in-prompt-span">
         Already have an account?{" "}

@@ -1,6 +1,13 @@
 .sign-up_component {
   display: flex;
   flex-direction: column;
+  .form-input-custom {
+    font-family: "Syne Mono", monospace;
+  }
+
+  .sign-up-btn {
+    font-family: "Tourney", cursive;
+  }
   .sign-in-prompt-span {
     text-align: center;
 

@@ -49,6 +49,7 @@ const SignIn = () => {
       <span>Sign In</span>
       <form onSubmit={handleFormSubmit}>
         <FormInput
+          classes="form-input-custom"
           onChange={handleInputChange}
           name="email"
           type="email"
@@ -56,17 +57,21 @@ const SignIn = () => {
           value={email}
         />
         <FormInput
+          classes="form-input-custom"
           onChange={handleInputChange}
           name="password"
           type="password"
           label="Password"
           value={password}
         />
-        <CustomButton type="submit">Sign In</CustomButton>
+        <CustomButton classes="sign-in-btn" type="submit">
+          Sign In
+        </CustomButton>
         <CustomButton
           onClick={handleGoogleSignIn}
           type="button"
           btnType="inverted"
+          classes="google-sign-in-btn"
         >
           Google Sign In
         </CustomButton>

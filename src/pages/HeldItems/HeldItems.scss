@@ -1,0 +1,11 @@
+.held-items-page {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  .held-items-page_title {
+    margin-bottom: 60px;
+    margin-top: 60px;
+  }
+}

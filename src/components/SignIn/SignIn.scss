@@ -1,6 +1,18 @@
 .sign-in-component {
   display: flex;
   flex-direction: column;
+
+  .form-input-custom {
+    font-family: "Syne Mono", monospace;
+  }
+
+  .google-sign-in-btn,
+  .sign-in-btn {
+    // font-family: 'Syne Mono', monospace;
+    font-family: "Ubuntu Mono", monospace;
+    font-family: "Tourney", cursive;
+    // font-weight: normal;
+  }
   .sign-up-prompt-span {
     text-align: center;
 
