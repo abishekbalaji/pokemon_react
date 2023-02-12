@@ -4,7 +4,7 @@
     margin-bottom: 60px;
 
     .pokemon-preview_search {
-      width: 30%;
+      width: 60%;
       margin: auto;
     }
   }
@@ -49,4 +49,14 @@
 
 .break-link {
   color: white;
+}
+
+@media (min-width: 800px) {
+  .pokemon-preview_page {
+    .pokemon-preview-page_container {
+      .pokemon-preview_search {
+        width: 40%;
+      }
+    }
+  }
 }

@@ -1,6 +1,8 @@
 import { useState } from "react";
 import { useDispatch } from "react-redux";
+import { useNavigate } from "react-router-dom";
 import setSignInOrUp from "../../store/signInOrUp/signInOrUpActions";
+import { signUpUserWithEmailAndPasswordAsync } from "../../store/user/userActions";
 import CustomButton from "../CustomButton/CustomButton";
 import FormInput from "../FormInput/FormInput";
 import "./SignUp.scss";
@@ -16,6 +18,7 @@ const SignUp = () => {
   const dispatch = useDispatch();
   const [formFields, setFormFields] = useState(INITIAL_FORM_STATE);
   const { name, email, password, confirmPassword } = formFields;
+  const navigate = useNavigate();
 
   const handleInputChange = (e) => {
     const { name, value } = e.target;
@@ -24,6 +27,13 @@ const SignUp = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
+    if (password !== confirmPassword) {
+      alert("Password and confirm password are not same");
+    } else {
+      dispatch(signUpUserWithEmailAndPasswordAsync(email, password, name));
+      setFormFields(INITIAL_FORM_STATE);
+      navigate("/");
+    }
   };
 
   const handleSignInSpanClick = () => {

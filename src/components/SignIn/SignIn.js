@@ -1,7 +1,11 @@
 import { useState } from "react";
 import { useDispatch } from "react-redux";
+import { useNavigate } from "react-router-dom";
 import setSignInOrUp from "../../store/signInOrUp/signInOrUpActions";
-import { signInAuthUserWithGoogleAsync } from "../../store/user/userActions";
+import {
+  signInAuthUserWithGoogleAsync,
+  signInUserWithEmailAndPasswordAsync,
+} from "../../store/user/userActions";
 // import { selectSignInOrUp } from "../../store/signInOrUp/signInOrUpSelectors";
 import CustomButton from "../CustomButton/CustomButton";
 import FormInput from "../FormInput/FormInput";
@@ -15,6 +19,7 @@ const FORM_INITIAL_STATE = {
 const SignIn = () => {
   const dispatch = useDispatch();
   const [formFields, setFormFields] = useState(FORM_INITIAL_STATE);
+  const navigate = useNavigate();
   // const [isSignUp, setIsSignUp] = useState(false);
   // const isSignUp = useSelector(selectSignInOrUp);
 
@@ -33,6 +38,9 @@ const SignIn = () => {
 
   const handleFormSubmit = (e) => {
     e.preventDefault();
+    dispatch(signInUserWithEmailAndPasswordAsync(email, password));
+    setFormFields(FORM_INITIAL_STATE);
+    navigate("/");
   };
 
   return (

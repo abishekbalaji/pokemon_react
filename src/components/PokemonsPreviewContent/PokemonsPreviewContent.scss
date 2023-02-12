@@ -13,11 +13,13 @@
     .pokemons-page_pokemon-container {
       display: flex;
       flex-direction: column;
-    //   border: 1px solid black;
+      //   border: 1px solid black;
+      // padding: 10px;
       justify-content: center;
       align-items: center;
       box-shadow: 0 1px 10px 2px rgba(0, 0, 0, 0.25);
-      padding: 15px 0;
+      padding: 15px;
+      font-size: 0.8rem;
 
       .pokemons-page_pokemon-name {
         font-weight: bold;
@@ -26,8 +28,8 @@
       .pokemons_page_info-span {
         cursor: pointer;
         // color: rgba(0, 0, 0, 0.5);
-          color: rgba(5, 71, 103, 0.5);
-          font-weight: bold;
+        color: rgba(5, 71, 103, 0.5);
+        font-weight: bold;
         //   color: ;
       }
     }
@@ -54,6 +56,10 @@
     .pokemons_page_container {
       display: grid;
       grid-template-columns: repeat(4, 1fr);
+
+      .pokemons-page_pokemon-container {
+        font-size: 1rem;
+      }
     }
   }
 }

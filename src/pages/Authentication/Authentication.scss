@@ -1,18 +1,37 @@
 .auth_section {
-  padding: 60px 80px;
+  // padding: 60px 80px;
   display: flex;
-
+  flex-direction: column;
+  flex-flow: column-reverse;
+  align-items: center;
   .sign-in-up_container {
-    width: 40%;
+    width: 80%;
   }
 
   .auth_image-container {
-    width: 60%;
-    height: 100vh;
+    width: 100%;
+    // height: 100vh;
+    height: 300px;
     background-image: url("../../assets/starters.jpg");
     background-size: cover;
     background-position: center;
     // margin: 0 80px;
-    margin-left: 60px;
+    // margin-left: 60px;
+  }
+  padding-bottom: 60px;
+}
+
+@media (min-width: 800px) {
+  .auth_section {
+    flex-direction: row;
+    padding: 60px 80px;
+
+    .sign-in-up_container {
+      width: 80%;
+    }
+    .auth_image-container {
+      height: 100vh;
+      margin-left: 60px;
+    }
   }
 }

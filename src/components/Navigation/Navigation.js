@@ -1,8 +1,9 @@
 import { useState } from "react";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { Link, Outlet } from "react-router-dom";
 import pokeball from "../../assets/pokeball.png";
 import pokedex from "../../assets/pokedex.png";
+import { signOutUserAsync } from "../../store/user/userActions";
 import { selectCurrentUser } from "../../store/user/userSelectors";
 
 import CustomButton from "../CustomButton/CustomButton";
@@ -10,6 +11,7 @@ import CustomButton from "../CustomButton/CustomButton";
 import "./Navigation.scss";
 
 const Navigation = () => {
+  const dispatch = useDispatch();
   const [dropdownVisible, setDropdownVisible] = useState(false);
   const currentUser = useSelector(selectCurrentUser);
 
@@ -19,6 +21,10 @@ const Navigation = () => {
 
   const handleDropdownInvisibleClick = () => {
     setDropdownVisible(false);
+  };
+
+  const handleSignOut = () => {
+    dispatch(signOutUserAsync());
   };
 
   return (
@@ -71,7 +77,9 @@ const Navigation = () => {
             </Link>
           </div>
           {currentUser ? (
-            <span>Sign Out</span>
+            <span onClick={handleSignOut} className="navigation_sign-out-span">
+              Sign Out
+            </span>
           ) : (
             <Link
               onClick={() => setDropdownVisible(false)}

@@ -10,8 +10,8 @@ const PokemonsPreviewContent = ({ pokemons, page }) => {
     <div className="pokemons_page">
       <div className="pokemons_page_container">
         {pokemons &&
-          pokemons.map((pokemon) => (
-            <div className="pokemons-page_pokemon-container">
+          pokemons.map((pokemon, idx) => (
+            <div key={idx} className="pokemons-page_pokemon-container">
               <span className="pokemons-page_pokemon-name">
                 {pokemon.name[0].toUpperCase() + pokemon.name.slice(1)}
               </span>
