@@ -28,7 +28,7 @@ const PokemonsPreview = () => {
 
   useEffect(() => {
     setPokemons(
-      pokemonsArray.filter((pokemon) => pokemon.name.includes(searchText))
+      pokemonsArray.filter((pokemon) => pokemon.name.includes(searchText.toLowerCase()))
     );
   }, [pokemonsArray, searchText]);
 
