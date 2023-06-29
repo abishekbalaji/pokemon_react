@@ -15,7 +15,9 @@ const Authentication = () => {
   // }, [isSignInOrUp, isSignUp]);
   return (
     <div className="auth_section">
-      <div className="sign-in-up_container">{isSignInOrUp ? <SignUp /> : <SignIn />}</div>
+      <div className="sign-in-up_container">
+        {isSignInOrUp ? <SignUp /> : <SignIn />}
+      </div>
       <div className="auth_image-container"></div>
     </div>
   );

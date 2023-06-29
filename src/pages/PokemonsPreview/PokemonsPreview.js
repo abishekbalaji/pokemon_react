@@ -23,14 +23,22 @@ const PokemonsPreview = () => {
   const itemsPerPage = 20;
   const [itemOffset, setItemOffset] = useState(offset || 0);
   const endOffset = itemOffset + itemsPerPage;
-  const currentItems = pokemons.slice(itemOffset, endOffset);
+  const [currentItems, setCurrentItems] = useState(
+    pokemons.slice(itemOffset, endOffset)
+  );
   const pageCount = Math.ceil(pokemons.length / itemsPerPage);
 
   useEffect(() => {
     setPokemons(
-      pokemonsArray.filter((pokemon) => pokemon.name.includes(searchText.toLowerCase()))
+      pokemonsArray.filter((pokemon) =>
+        pokemon.name.includes(searchText.toLowerCase())
+      )
     );
   }, [pokemonsArray, searchText]);
+
+  useEffect(() => {
+    setCurrentItems(pokemons.slice(itemOffset, endOffset));
+  }, [pokemons, itemOffset, endOffset]);
 
   const handlePageClick = (event) => {
     const newOffset = (event.selected * itemsPerPage) % pokemons.length;
@@ -59,7 +67,9 @@ const PokemonsPreview = () => {
             value={searchText}
             placeholder="Search..."
           />
-          <PokemonsPreviewContent pokemons={currentItems} page={itemOffset} />
+          {currentItems && (
+            <PokemonsPreviewContent pokemons={searchText ? pokemons : currentItems} page={itemOffset} />
+          )}
         </div>
       )}
       <div className="pagination_container">
